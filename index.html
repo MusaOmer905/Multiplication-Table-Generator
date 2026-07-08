@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title> Inclass Challenge </title>
+<style>
+body{
+    padding:0;
+    margin:0;
+    background:lightgreen;
+}
+.container{
+    background:cornflowerblue;
+    padding:15px;
+    border-radius:7px;
+    margin:10px auto;
+    width:85%;
+}
+input{
+    width:55%;
+}
+button{
+    background-color:lightseagreen;
+    padding:10px;
+    border-radius:5px;
+    border:none;
+}
+    </style>
+    </head>
+<body>
+<center>
+<div class="container"> 
+    <h1> Multiplication Table Generator </h1>
+    <input type="number" id="numberInput" placeholder="Enter  a number to get the Multiplication Table"> 
+    <button onclick="generateTable()"> Generate Table </button>
+    <br>
+    <div id="result">  </div>
+     </div>
+</center>
+<script>
+function generateTable(){
+    let num = document.getElementById("numberInput").value;
+document.getElementById("result").innerHTML = "";
+
+if(num === ""){
+    document.getElementById("result").innerHTML = "Enter A NUMBER ARE YOU TRYING TO WASTE MY TIME!!!!!!!";
+    return;
+}
+
+let table = `Multiplication Table of: ${num}<br>`;
+
+for(let i=1; i<13; i++){
+    table += `${num} x ${i} = ${num*i}<br>`;
+}
+document.getElementById("result").innerHTML = table;
+}
+    </script>
+</body>
+</html>
